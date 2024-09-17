@@ -3,10 +3,6 @@ Data Import
 
 This document will show how to import data.
 
-you can also bring in library(janitor) but you dont really need to
-because the clean names is the only function you need from this. You
-dont wanna load a lot of packages.
-
 ## Import the FAS litters CSV
 
 ``` r
@@ -203,3 +199,20 @@ litters_df=
     )
   )
 ```
+
+## Import an excel file
+
+``` r
+mlb_df= read_excel("data/mlb11.xlsx", sheet="mlb11")
+```
+
+for read_excel you need to load realxl “range=” allows you to specify a
+range of columns and rows sheet is also unique to read_excel.
+
+## Import SAS data
+
+``` r
+pulse_df=read_sas("data/public_pulse_data.sas7bdat")
+```
+
+for read_sas you need to load the haven package.
