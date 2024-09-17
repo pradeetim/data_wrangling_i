@@ -1,0 +1,38 @@
+---
+title: "Data Import"
+output: github_document
+---
+
+This document will show how to import data.
+
+```{r setup, echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+you can also bring in library(janitor) but you dont really need to because the clean names is the only function you need from this. You dont wanna load a lot of packages.
+
+## Import the FAS litters CSV
+
+```{r}
+litters_df = read_csv("./data/data_import_examples/FAS_litters.csv")
+
+litters_df = janitor::clean_names(litters_df)
+```
+
+janitor is a package you use to clean the data set. 
+It will make things lowercase, get rid of spaces and replace w underscores, etc. 
+
+
+# Look at the data set
+
+```{r}
+litters_df
+
+head(litters_df)
+tail(litters_df, 10)
+```
+
+```{r eval=FALSE}
+view(litters_df)
+```
+
